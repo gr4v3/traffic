@@ -23,6 +23,8 @@
 	<files>
 		<filename plugin="traffic">traffic.php</filename>
 		<filename>index.html</filename>
+                <filename>cssmin.php</filename>
+                <filename>jsmin.php</filename>
 	</files>
 
 	<languages>
