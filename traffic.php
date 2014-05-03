@@ -45,7 +45,7 @@ class plgSystemtraffic extends JPlugin {
                     $no_js_cache = $this->params->get('nocache', isset($nojscache));
                     $no_js_min = $this->params->get('jsmin', isset($nojsmin));
                     $no_css_cache = $this->params->get('nocache', isset($nocsscache));
-                    $no_css_min = ! $this->params->get('jsmin', isset($nocssmin));
+                    $no_css_min = $this->params->get('cssmin', isset($nocssmin));
                     $http_url_reference = md5(JURI::current());
                     if ($reset_cache) {
                             $handle = dir(JPATH_ROOT . DIRECTORY_SEPARATOR .'cache/'); 
