@@ -31,13 +31,13 @@ class plgSystemtraffic extends JPlugin {
         function onBeforeCompileHead() {
             $app =& JFactory::getApplication();
             $document =& JFactory::getDocument();
-            $disable_cache = isset($_GET['nocache']);
+            $disable_cache = isset(JRequest::getVar('nocache'));
             if ($app->isSite() && ! $disable_cache) {
-                    $reset_cache = isset($_GET['resetcache']);
-                    $no_js_cache = isset($_GET['nojscache']);
-                    $no_js_min = isset($_GET['nojsmin']);
-                    $no_css_cache = isset($_GET['nocsscache']);
-                    $no_css_min = !isset($_GET['nocssmin']);
+                    $reset_cache = isset(JRequest::getVar('resetcache'));
+                    $no_js_cache = $this->params->get('nocache', isset(JRequest::getVar('nojscache')));
+                    $no_js_min = $this->params->get('jsmin', isset(JRequest::getVar('nojsmin')));
+                    $no_css_cache = $this->params->get('nocache', isset(JRequest::getVar('nocsscache')));
+                    $no_css_min = ! $this->params->get('jsmin', isset(JRequest::getVar('nocssmin')));
                     $http_url_reference = md5(JURI::current());
                     if ($reset_cache) {
                             $handle = dir(JPATH_ROOT . DIRECTORY_SEPARATOR .'cache/'); 

@@ -23,17 +23,33 @@
 	<files>
 		<filename plugin="traffic">traffic.php</filename>
 		<filename>index.html</filename>
+                <filename>cssmin.php</filename>
+                <filename>jsmin.php</filename>
 	</files>
-
-	<languages>
-		<language tag="en-GB">en-GB.plg_system_traffic.ini</language>
-		<language tag="en-GB">en-GB.plg_system_traffic.sys.ini</language>
-	</languages>
-
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-                            
+                            <field name="jsmin" type="radio"
+                                        default="0"
+                                        description="minimizes all the javascript code found in joomla"
+                                        label="activate js minifier on startup">
+                                        <option value="0">JOFF</option>
+                                        <option value="1">JON</option>
+                                </field>
+                            <field name="cssmin" type="radio"
+                                        default="0"
+                                        description="minimizes all the css code found in joomla"
+                                        label="activate css minifier on startup">
+                                        <option value="0">JOFF</option>
+                                        <option value="1">JON</option>
+                                </field>
+                            <field name="nocache" type="radio"
+                                        default="0"
+                                        description="enables to join into a single file all the contents from all the jss/css requests "
+                                        label="activate traffic on startup">
+                                        <option value="0">JOFF</option>
+                                        <option value="1">JON</option>
+                                </field>        
 			</fieldset>
 		</fields>
 	</config>
