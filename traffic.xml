@@ -33,22 +33,22 @@
                                         default="0"
                                         description="minimizes all the javascript code found in joomla"
                                         label="activate js minifier on startup">
-                                        <option value="0">JOFF</option>
-                                        <option value="1">JON</option>
+                                        <option value="1">JOFF</option>
+                                        <option value="0">JON</option>
                                 </field>
                             <field name="cssmin" type="radio"
                                         default="0"
                                         description="minimizes all the css code found in joomla"
                                         label="activate css minifier on startup">
-                                        <option value="0">JOFF</option>
-                                        <option value="1">JON</option>
+                                        <option value="1">JOFF</option>
+                                        <option value="0">JON</option>
                                 </field>
                             <field name="nocache" type="radio"
                                         default="0"
                                         description="enables to join into a single file all the contents from all the jss/css requests "
                                         label="activate traffic on startup">
-                                        <option value="0">JOFF</option>
-                                        <option value="1">JON</option>
+                                        <option value="1">JOFF</option>
+                                        <option value="0">JON</option>
                                 </field>        
 			</fieldset>
 		</fields>
