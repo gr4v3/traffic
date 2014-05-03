@@ -31,13 +31,21 @@ class plgSystemtraffic extends JPlugin {
         function onBeforeCompileHead() {
             $app =& JFactory::getApplication();
             $document =& JFactory::getDocument();
-            $disable_cache = isset(JRequest::getVar('nocache'));
+            
+            $nocache = JRequest::getVar('nocache');
+            $resetcache = JRequest::getVar('resetcache');
+            $nojscache = JRequest::getVar('nojscache');
+            $nojsmin = JRequest::getVar('nojsmin');
+            $nocsscache = JRequest::getVar('nocsscache');
+            $nocssmin = JRequest::getVar('nocssmin');
+            
+            $disable_cache = isset($nocache);
             if ($app->isSite() && ! $disable_cache) {
-                    $reset_cache = isset(JRequest::getVar('resetcache'));
-                    $no_js_cache = $this->params->get('nocache', isset(JRequest::getVar('nojscache')));
-                    $no_js_min = $this->params->get('jsmin', isset(JRequest::getVar('nojsmin')));
-                    $no_css_cache = $this->params->get('nocache', isset(JRequest::getVar('nocsscache')));
-                    $no_css_min = ! $this->params->get('jsmin', isset(JRequest::getVar('nocssmin')));
+                    $reset_cache = isset($resetcache);
+                    $no_js_cache = $this->params->get('nocache', isset($nojscache));
+                    $no_js_min = $this->params->get('jsmin', isset($nojsmin));
+                    $no_css_cache = $this->params->get('nocache', isset($nocsscache));
+                    $no_css_min = ! $this->params->get('jsmin', isset($nocssmin));
                     $http_url_reference = md5(JURI::current());
                     if ($reset_cache) {
                             $handle = dir(JPATH_ROOT . DIRECTORY_SEPARATOR .'cache/'); 
